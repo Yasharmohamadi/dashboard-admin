@@ -1,7 +1,7 @@
-import Home from "./pages/Home/Home.js";
-import Users from "./pages/Users/Users.js";
-import NewUser from "./pages/NewUser/NewUser.js";
-import Products from "./pages/Products/Products.js";
+import Home from "./pages/Home/Home";
+import Users from "./pages/Users/Users";
+import NewUser from "./pages/NewUser/NewUser";
+import Products from "./pages/Products/Products";
 
 export let routes = [
 	{ path: "/", element: <Home /> },
