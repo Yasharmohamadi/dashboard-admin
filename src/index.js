@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css"
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 // FIRST WAY TO USE REAC
 // ReactDOM.render(
 //     <Main />,
@@ -10,6 +11,7 @@ import "./index.css"
 // SECOND WAY TO USE REACT
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<React.Fragment>
-	</React.Fragment>
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>
 );
