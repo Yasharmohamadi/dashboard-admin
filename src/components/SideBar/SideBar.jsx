@@ -15,6 +15,7 @@ import {
 	SupervisedUserCircle,
 } from "@mui/icons-material";
 import "./SideBar.css";
+import { Link } from "react-router-dom";
 
 export default function SideBar() {
 	return (
@@ -23,10 +24,12 @@ export default function SideBar() {
 				<div className="sidebar-menu">
 					<h3 className="sidebar-menu_title">Dashboard</h3>
 					<ul className="sidebar-menu_list">
-						<li className="sidebar-menu_item">
-							<Home className="sidebar-menu-icon" />
-							Home
-						</li>
+						<Link to="/home" className="link">
+							<li className="sidebar-menu_item">
+								<Home className="sidebar-menu-icon" />
+								Home
+							</li>
+						</Link>
 						<li className="sidebar-menu_item">
 							<Timeline className="sidebar-menu-icon" />
 							Analystics
@@ -40,18 +43,24 @@ export default function SideBar() {
 				<div className="sidebar-menu">
 					<h3 className="sidebar-menu_title">Quick Menu</h3>
 					<ul className="sidebar-menu_list">
-						<li className="sidebar-menu_item">
-							<SupervisedUserCircle className="sidebar-menu-icon" />
-							Users
-						</li>
-						<li className="sidebar-menu_item">
-							<PermIdentity className="sidebar-menu-icon" />
-							New User
-						</li>
-						<li className="sidebar-menu_item">
-							<Storefront className="sidebar-menu-icon" />
-							Products
-						</li>
+						<Link to="/users" className="link">
+							<li className="sidebar-menu_item">
+								<SupervisedUserCircle className="sidebar-menu-icon" />
+								Users
+							</li>
+						</Link>
+						<Link to="/newuser" className="link">
+							<li className="sidebar-menu_item">
+								<PermIdentity className="sidebar-menu-icon" />
+								New User
+							</li>
+						</Link>
+						<Link to="/products" className="link">
+							<li className="sidebar-menu_item">
+								<Storefront className="sidebar-menu-icon" />
+								Products
+							</li>
+						</Link>
 						<li className="sidebar-menu_item">
 							<AttachMoney className="sidebar-menu-icon" />
 							Transaction

@@ -1,14 +1,18 @@
 import React from "react";
 import { Notifications, Language, Settings } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+
 import "./TopBar.css";
 
 export default function TopBar() {
 	return (
 		<div className="topbar">
 			<div className="topbar_wrapper">
-				<div className="topbar_left">
-					<span className="logo">CMS</span>
-				</div>
+				<Link to="/" className="link">
+					<div className="topbar_left">
+						<span className="logo">CMS</span>
+					</div>
+				</Link>
 				<div className="topbar_right">
 					<div className="topbar_icon-container">
 						<Notifications />
