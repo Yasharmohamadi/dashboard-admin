@@ -1,0 +1,52 @@
+.features {
+	/* width: 100%; */
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	flex-wrap: wrap;
+}
+
+.features-item {
+	flex: 1;
+	margin: 10px 20px;
+	padding: 30px;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: #fff;
+}
+
+.features_title {
+	font-size: 20px;
+}
+
+.features_container {
+	display: flex;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.features_price {
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.features_rate {
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+}
+
+.fearures_icon {
+	margin-left: 5px;
+	color: green;
+}
+
+.down {
+	color: red;
+}
+
+.features_sub {
+	font-size: 15px;
+	color: grey;
+}

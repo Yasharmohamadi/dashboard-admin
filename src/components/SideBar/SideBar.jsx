@@ -25,7 +25,7 @@ export default function SideBar() {
 					<h3 className="sidebar-menu_title">Dashboard</h3>
 					<ul className="sidebar-menu_list">
 						<Link to="/home" className="link">
-							<li className="sidebar-menu_item">
+							<li className="sidebar-menu_item active F" >
 								<Home className="sidebar-menu-icon" />
 								Home
 							</li>

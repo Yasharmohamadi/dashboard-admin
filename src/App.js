@@ -9,12 +9,12 @@ export default function App() {
 	let router = useRoutes(routes);
 
 	return (
-		<div>
+		<>
 			<TopBar />
 			<div className="container">
 				<SideBar />
 				{router}
 			</div>
-		</div>
+		</>
 	);
 }
