@@ -1,8 +1,76 @@
 .widgerlg {
-    flex: 1;
+	flex: 2;
 	padding: 30px;
 	border-radius: 10px;
 	cursor: pointer;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	background: #fff;
+	margin: 10px 20px;
+	/* display: flex; */
+	/* flex-direction: column; */
+}
+
+.widgetlg_title {
+	/* flex: 1; */
+	margin-bottom: 5px;
+}
+.widgetlg_table {
+	width: 100%;
+	border-spacing: 20px;
+	/* flex: 2; */
+}
+.widgetlg-table_row {
+	/* display: flex;
+	justify-content: space-between;
+	align-items: center; */
+}
+.widgetlg-table_head {
+	text-align: left;
+}
+.widgetlg-table-data {
+	text-align: left;
+}
+.data_user {
+	display: flex;
+	align-items: center;
+}
+
+.user_img {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+.user_title {
+}
+.data_date,
+.data_amount {
+	color: grey;
+	font-size: 15px;
+}
+
+.data_status {
+}
+
+.widgetlg-status {
+	border: none;
+	outline: none;
+	background: #fff;
+	padding: 7px 9px;
+	border-radius: 10px;
+
+	cursor: pointer;
+}
+
+.Approved {
+	color: #3bb077;
+	background: #e5faf2;
+}
+.Declined {
+	color: #d95087;
+	background: #fff0f1;
+}
+.Pending {
+	color: #2a7ade;
+	background: #e5f1fe;
 }

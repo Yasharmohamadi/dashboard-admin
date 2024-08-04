@@ -3,5 +3,7 @@
 }
 
 .home-widgets {
-	margin: 10px 20px;
+	/* margin: 10px 20px; */
+	display: flex;
+	flex-wrap: wrap;
 }
