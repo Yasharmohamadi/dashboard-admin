@@ -9,9 +9,12 @@ export let chartData = [
 ];
 
 export let newUsers = [
-	{id: 1, name: 'Yashar', family: 'Mohammadi', job: 'Front-End Developer'},
-	{id: 2, name: 'Yashar', family: 'Mohammadi', job: 'Front-End Developer'},
-	{id: 3, name: 'Yashar', family: 'Mohammadi', job: 'Front-End Developer'},
-
-
-]
+	{ id: 1, name: "Yashar", family: "Mohammadi", job: "Front-End Developer" },
+	{ id: 2, name: "Yashar", family: "Mohammadi", job: "Front-End Developer" },
+	{ id: 3, name: "Yashar", family: "Mohammadi", job: "Front-End Developer" },
+];
+export let actions = [
+	{ id: 1, customer: "Yashar", date: "18 Aug 2024", amount: "99.2", status: 'Approved'},
+	{ id: 2, customer: "Yashar", date: "18 Aug 2024", amount: "99.2", status: 'Pending'},
+	{ id: 3, customer: "Yashar", date: "18 Aug 2024", amount: "99.2", status: 'Declined'},
+];

@@ -1,5 +1,7 @@
 import React from "react";
 import "./WidgetLG.css";
+import { actions } from "../../Data";
+
 
 export default function WidgetLG() {
 	const Button = ({ type }) => {
@@ -16,39 +18,20 @@ export default function WidgetLG() {
 					<th className="widgetlg-table_head">Amount</th>
 					<th className="widgetlg-table_head">Status</th>
 				</tr>
+				{actions.map((act)=> (
 				<tr className="widgetlg-table_row">
 					<td className="widgetlg-table-data data_user">
 						<img className="user_img" src="images/prof.jpg" />
-						<span className="user_title">Yashar</span>
+						<span className="user_title">{act.customer}</span>
 					</td>
-					<td className="widgetlg-table-data data_date">18 Aug 2024</td>
-					<td className="widgetlg-table-data data_amount">$99.2</td>
+					<td className="widgetlg-table-data data_date">{act.date}</td>
+					<td className="widgetlg-table-data data_amount">${act.amount}</td>
 					<td className="widgetlg-table-data data_status">
-						<Button type="Approved" />
+						<Button type={act.status} />
 					</td>
 				</tr>
-				<tr className="widgetlg-table_row">
-					<td className="widgetlg-table-data data_user">
-						<img className="user_img" src="images/prof.jpg" />
-						<span className="user_title">Yashar</span>
-					</td>
-					<td className="widgetlg-table-data data_date">18 Aug 2024</td>
-					<td className="widgetlg-table-data data_amount">$99.2</td>
-					<td className="widgetlg-table-data data_status">
-						<Button type="Declined" />
-					</td>
-				</tr>
-				<tr className="widgetlg-table_row">
-					<td className="widgetlg-table-data data_user">
-						<img className="user_img" src="images/prof.jpg" />
-						<span className="user_title">Yashar</span>
-					</td>
-					<td className="widgetlg-table-data data_date">18 Aug 2024</td>
-					<td className="widgetlg-table-data data_amount">$99.2</td>
-					<td className="widgetlg-table-data data_status">
-						<Button type="Pending" />
-					</td>
-				</tr>
+
+				))}
 			</table>
 		</div>
 	);
