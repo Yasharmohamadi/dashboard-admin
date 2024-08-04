@@ -1,0 +1,57 @@
+.widgetsm {
+	flex: 1;
+	padding: 30px;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: #fff;
+}
+
+.widgetsm_title {
+	font-size: 20px;
+	margin-bottom: 20px;
+
+}
+.widgetsm_list {
+	list-style: none;
+
+}
+.widgetsm-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0;
+
+}
+.widgetsm-item_img {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+
+}
+.widgetsm-item_user {
+	display: flex;
+	flex-direction: column;
+
+}
+.widgetsm_user-name {
+	font-weight: 600;
+	font-size: 17px;
+
+}
+.widgetsm_user-job {
+	color: #919191;
+	font-size: 15px;
+
+}
+.widgetsm-item_button {
+	border: none;
+	outline: none;
+	background: #fff;
+	padding: 20px;
+	cursor: pointer;
+}
+
+.widgetsm-button_icon {
+	color: #919191;
+}

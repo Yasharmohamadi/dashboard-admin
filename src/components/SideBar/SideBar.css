@@ -2,6 +2,7 @@
 	flex: 1;
 	height: calc(100vh - 50px);
 	position: sticky;
+	top: 55px;
 }
 .sidebar_wrapper {
 	padding: 20px;

@@ -7,3 +7,10 @@ export let chartData = [
 	{ name: "Jul", sale: 50_000 },
 	{ name: "Oct", sale: 63_000 },
 ];
+
+export let newUsers = [
+	{id: 1, name: 'Yashar', family: 'Mohammadi', job: 'Front-End Developer'},
+	{id: 2, name: 'Yashar', family: 'Mohammadi', job: 'Front-End Developer'},
+	{id: 3, name: 'Yashar', family: 'Mohammadi', job: 'Front-End Developer'},
+
+]

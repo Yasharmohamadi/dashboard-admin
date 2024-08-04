@@ -1,4 +1,7 @@
 .home-wrapper {
-    /* flex-grow: 110; */
+	/* flex-grow: 110; */
+}
 
+.home-widgets {
+	margin: 10px 20px;
 }
