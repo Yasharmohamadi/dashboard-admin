@@ -1,7 +1,6 @@
 .topbar {
 	width: 100%;
 	background: #fff;
-	/* background: rgb(251, 251, 255); */
 	position: sticky;
 	top: 0;
 	z-index: 999;
@@ -9,7 +8,7 @@
 }
 .topbar_wrapper {
 	height: 100%;
-	padding: 7px 20px;
+	padding: 10px 20px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;

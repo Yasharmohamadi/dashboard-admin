@@ -1,5 +1,5 @@
 import React from "react";
-import './App.css'
+import "./App.css";
 import { routes } from "./Routes";
 import { useRoutes } from "react-router-dom";
 import TopBar from "./components/TopBar/TopBar";
@@ -13,7 +13,7 @@ export default function App() {
 			<TopBar />
 			<div className="container">
 				<SideBar />
-				{router}
+				<div className="right-section">{router}</div>
 			</div>
 		</>
 	);

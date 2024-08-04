@@ -1,8 +1,14 @@
 .container {
-    display: flex;
+	display: flex;
+	padding-right: 10px;
+}
+
+.right-section {
+	flex: 5;
+    margin-top: 20px;
 }
 
 .link {
-    text-decoration: none;
-    color: inherit;
+	text-decoration: none;
+	color: inherit;
 }

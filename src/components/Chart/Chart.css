@@ -1,5 +1,5 @@
 .chart {
-	margin: 10px 20px;
+	margin: 20px;
 	padding: 30px;
 	border-radius: 10px;
 	cursor: pointer;
@@ -9,8 +9,5 @@
 
 .chart_title {
 	font-size: 20px;
-}
-
-.chart_wrapper {
-	margin-top: 20px;
+	margin-bottom: 20px;
 }

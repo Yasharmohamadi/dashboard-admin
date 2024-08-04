@@ -2,13 +2,12 @@
 	/* width: 100%; */
 	display: flex;
 	justify-content: center;
-	margin-top: 20px;
 	flex-wrap: wrap;
 }
 
 .features-item {
 	flex: 1;
-	margin: 10px 20px;
+	margin:20px;
 	padding: 30px;
 	border-radius: 10px;
 	cursor: pointer;

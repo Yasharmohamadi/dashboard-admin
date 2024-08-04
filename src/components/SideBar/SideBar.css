@@ -1,11 +1,7 @@
 .sidebar {
-	/* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-	background: #fff; */
 	flex: 1;
 	height: calc(100vh - 50px);
 	position: sticky;
-	top: 50px;
-	/* max-width: 220px; */
 }
 .sidebar_wrapper {
 	padding: 20px;
