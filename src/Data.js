@@ -9,12 +9,118 @@ export let chartData = [
 ];
 
 export let newUsers = [
-	{ id: 1, name: "Yashar", family: "Mohammadi", job: "Front-End Developer" },
-	{ id: 2, name: "Yashar", family: "Mohammadi", job: "Front-End Developer" },
-	{ id: 3, name: "Yashar", family: "Mohammadi", job: "Front-End Developer" },
+	{
+		id: 1,
+		name: "Yashar",
+		family: "Mohammadi",
+		job: "Front-End Developer",
+		img: "images/prof.jpg",
+	},
+	{
+		id: 2,
+		name: "Yashar",
+		family: "Mohammadi",
+		job: "Front-End Developer",
+		img: "images/prof.jpg",
+	},
+	{
+		id: 3,
+		name: "Yashar",
+		family: "Mohammadi",
+		job: "Front-End Developer",
+		img: "images/prof.jpg",
+	},
 ];
 export let actions = [
-	{ id: 1, customer: "Yashar", date: "18 Aug 2024", amount: "99.2", status: 'Approved'},
-	{ id: 2, customer: "Yashar", date: "18 Aug 2024", amount: "99.2", status: 'Pending'},
-	{ id: 3, customer: "Yashar", date: "18 Aug 2024", amount: "99.2", status: 'Declined'},
+	{
+		id: 1,
+		customer: "Yashar",
+		date: "18 Aug 2024",
+		amount: "99.2",
+		status: "Approved",
+		img: "images/prof.jpg",
+	},
+	{
+		id: 2,
+		customer: "Yashar",
+		date: "18 Aug 2024",
+		amount: "99.2",
+		status: "Pending",
+		img: "images/prof.jpg",
+	},
+	{
+		id: 3,
+		customer: "Yashar",
+		date: "18 Aug 2024",
+		amount: "99.2",
+		status: "Declined",
+		img: "images/prof.jpg",
+	},
+];
+
+export let allUsers = [
+	{
+		id: 1,
+		username: "Yashar",
+		status: "active",
+		transactions: "$265",
+		avatar: "images/prof.jpg",
+		email: 'email@gmail.com'
+	},
+	{
+		id: 2,
+		username: "Yashar",
+		status: "active",
+		transactions: "$265",
+		avatar: "images/prof.jpg",
+		email: 'email@gmail.com'
+	},
+	{
+		id: 3,
+		username: "Yashar",
+		status: "active",
+		transactions: "$265",
+		avatar: "images/prof.jpg",
+		email: 'email@gmail.com'
+	},
+	{
+		id: 4,
+		username: "Yashar",
+		status: "non-active",
+		transactions: "$265",
+		avatar: "images/prof.jpg",
+		email: 'email@gmail.com'
+	},
+	{
+		id: 5,
+		username: "Yashar",
+		status: "non-active",
+		transactions: "$265",
+		avatar: "images/prof.jpg",
+		email: 'email@gmail.com'
+	},
+	{
+		id: 7,
+		username: "Yashar",
+		status: "active",
+		transactions: "$265",
+		avatar: "images/prof.jpg",
+		email: 'email@gmail.com'
+	},
+	{
+		id: 8,
+		username: "Yashar",
+		status: "active",
+		transactions: "$265",
+		avatar: "images/prof.jpg",
+		email: 'email@gmail.com'
+	},
+	{
+		id: 9,
+		username: "Yashar",
+		status: "active",
+		transactions: "$265",
+		avatar: "images/prof.jpg",
+		email: 'email@gmail.com'
+	},
 ];

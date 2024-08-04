@@ -10,7 +10,7 @@ export default function WidgetSM() {
 			<ul className="widgetsm_list">
 				{newUsers.map((user) => (
 					<li key={user.id} className="widgetsm-item">
-						<img src="images/prof.jpg" className="widgetsm-item_img" />
+						<img src={user.img} className="widgetsm-item_img" />
 						<div className="widgetsm-item_user">
 							<span className="widgetsm_user-name">{user.name}{user.family}</span>
 							<span className="widgetsm_user-job">{user.job}</span>

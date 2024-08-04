@@ -21,7 +21,7 @@ export default function WidgetLG() {
 				{actions.map((act)=> (
 				<tr className="widgetlg-table_row">
 					<td className="widgetlg-table-data data_user">
-						<img className="user_img" src="images/prof.jpg" />
+						<img className="user_img" src={act.img} />
 						<span className="user_title">{act.customer}</span>
 					</td>
 					<td className="widgetlg-table-data data_date">{act.date}</td>
