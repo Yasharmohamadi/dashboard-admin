@@ -1,7 +1,7 @@
 .sidebar {
 	/* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 	background: #fff; */
-	/* flex: 1; */
+	flex: 1;
 	height: calc(100vh - 50px);
 	position: sticky;
 	top: 50px;
@@ -23,7 +23,7 @@
 	padding: 5px;
 }
 .sidebar-menu_item {
-	/* margin: 4px 0; */
+	margin: 1px 0;
 	padding: 5px;
 	cursor: pointer;
 	display: flex;

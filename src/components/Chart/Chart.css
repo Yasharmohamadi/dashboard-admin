@@ -1,0 +1,16 @@
+.chart {
+	margin: 10px 20px;
+	padding: 30px;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background: #fff;
+}
+
+.chart_title {
+	font-size: 20px;
+}
+
+.chart_wrapper {
+	margin-top: 20px;
+}
