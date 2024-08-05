@@ -49,28 +49,36 @@ export default function Product() {
 					</div>
 				</div>
 				
-			<div className="product-bottom">
-				<h3 className="edit-title">Edit Details</h3>
-				<form className="bottom-form">
+			<div className="product-form">
+				<div className="form-wrapper">
+				<h3 className="form-title">Edit Details</h3>
+				<form className="form">
 					<div className="form-left">
-						<label className="name-label">Product Name :</label>
+						<label className="label">Name :</label>
 						<input
 							type="text"
-							className="name-input"
+							className="input"
 							placeholder="Enter New Name ..."
 						/>
 
-						<label className="price-label">Product Price :</label>
+						<label className="label">Price :</label>
 						<input
 							type="number"
-							className="price-input"
+							className="input"
 							placeholder="Enter New Price ..."
 						/>
 
-						<label className="stock-label">In Stock :</label>
-						<select id="inStock">
-							<option value="yes">Yes</option>
-							<option value="no">No</option>
+						<label className="label">Author :</label>
+						<input
+							type="text"
+							className="input"
+							placeholder="Enter New Price ..."
+						/>
+
+						<label className="label">Type :</label>
+						<select id="type" className="input">
+							<option value="yes">Paper</option>
+							<option value="no">Another</option>
 						</select>
 					</div>
 					<div className="form-right">
@@ -87,6 +95,7 @@ export default function Product() {
 						</buton>
 					</div>
 				</form>
+				</div>
 			</div>
 			</div>
 

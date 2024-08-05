@@ -14,7 +14,7 @@ export default function Chart({data, grid, title, dataKey, titleColor}) {
 	return (
 		<div className="chart">
 			<h3 className="chart_title" style={{color: `${titleColor}`}}>{title}</h3>
-			<ResponsiveContainer width='100%' aspect={3} className='chart_wrapper'>
+			<ResponsiveContainer width='100%' aspect={4} className='chart_wrapper'>
 				<LineChart data={data}>
 					<XAxis dataKey='name' stroke="#5550bd" />
 					<Line type='monotone' dataKey='sale' stroke="#5550bd" />
