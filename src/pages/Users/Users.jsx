@@ -55,11 +55,13 @@ export default function Users() {
 
 	return (
 		<div className="userslist">
+			<h3 className="userslist_title">Users</h3>
 			<DataGrid
 				rows={users}
 				columns={columns}
 				className="userslist-datagrid"
-				pageSize={3}
+				checkboxSelection
+
 			/>
 		</div>
 	);

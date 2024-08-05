@@ -124,3 +124,10 @@ export let allUsers = [
 		email: 'email@gmail.com'
 	},
 ];
+
+export let allBooks = [
+	{id: 1, name: 'Book', img: 'images/book.png',price: '$298', amount: 7 },
+	{id: 2, name: 'Book', img: 'images/book.png',price: '$298', amount: 1 },
+	{id: 3, name: 'Book', img: 'images/book.png',price: '$298', amount: 5 },
+	{id: 4, name: 'Book', img: 'images/book.png',price: '$298', amount: 12 },
+]
