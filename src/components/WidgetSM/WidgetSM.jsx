@@ -12,7 +12,7 @@ export default function WidgetSM() {
 					<li key={user.id} className="widgetsm-item">
 						<img src={user.img} className="widgetsm-item_img" />
 						<div className="widgetsm-item_user">
-							<span className="widgetsm_user-name">{user.name}{user.family}</span>
+							<span className="widgetsm_user-name">{`${user.name} ${user.family}`}</span>
 							<span className="widgetsm_user-job">{user.job}</span>
 						</div>
 						<button className="widgetsm-item_button">

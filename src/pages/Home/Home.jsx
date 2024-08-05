@@ -10,7 +10,7 @@ export default function Home() {
 	return (
 		<div className="home-wrapper">
 			<Features />
-			<Chart grid data={chartData} title="Month Sales"/>
+			<Chart grid data={chartData} title="Month Sales" titleColor='#000'/>
 			<div className="home-widgets">
 				<WidgetSM/>
 				<WidgetLG/>

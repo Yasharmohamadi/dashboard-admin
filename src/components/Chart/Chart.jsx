@@ -9,11 +9,11 @@ import {
 } from "recharts";
 import './Chart.css'
 
-export default function Chart({data, grid, title, dataKey}) {
+export default function Chart({data, grid, title, dataKey, titleColor}) {
 	
 	return (
 		<div className="chart">
-			<h3 className="chart_title">{title}</h3>
+			<h3 className="chart_title" style={{color: `${titleColor}`}}>{title}</h3>
 			<ResponsiveContainer width='100%' aspect={3} className='chart_wrapper'>
 				<LineChart data={data}>
 					<XAxis dataKey='name' stroke="#5550bd" />

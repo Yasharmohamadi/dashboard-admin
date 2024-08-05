@@ -10,7 +10,7 @@ export default function TopBar() {
 			<div className="topbar_wrapper">
 				<Link to="/" className="link">
 					<div className="topbar_left">
-						<span className="logo">CMS</span>
+						<span className="logo">YASH CMS</span>
 					</div>
 				</Link>
 				<div className="topbar_right">

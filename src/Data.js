@@ -126,8 +126,16 @@ export let allUsers = [
 ];
 
 export let allBooks = [
-	{id: 1, name: 'Book', img: 'images/book.png',price: '$298', amount: 7 },
-	{id: 2, name: 'Book', img: 'images/book.png',price: '$298', amount: 1 },
-	{id: 3, name: 'Book', img: 'images/book.png',price: '$298', amount: 5 },
-	{id: 4, name: 'Book', img: 'images/book.png',price: '$298', amount: 12 },
-]
+	{id: 1, name: 'Book', img: '/images/book.png',price: '$298', amount: 7 },
+	{id: 2, name: 'Book', img: '/images/book.png',price: '$298', amount: 1 },
+	{id: 3, name: 'Book', img: '/images/book.png',price: '$298', amount: 5 },
+	{id: 4, name: 'Book', img: '/images/book.png',price: '$298', amount: 12 },
+];
+
+export let productData = [
+	{ name: "Jan", sale: 39_000 },
+	{ name: "Feb", sale: 128_000 },
+	{ name: "Aug", sale: 56_000 },
+	{ name: "Sep", sale: 156_000 },
+
+];
