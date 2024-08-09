@@ -1,5 +1,4 @@
-.product {
-}
+
 .product-top {
 	display: flex;
 	flex-wrap: wrap;
@@ -51,9 +50,6 @@
 .detail-right {
 	font-size: 18px;
 	margin: 5px;
-}
-
-.infos-btn {
 }
 
 .product-form {
