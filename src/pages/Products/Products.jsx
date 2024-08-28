@@ -6,21 +6,30 @@ import { Edit, DeleteOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Alert } from "@mui/material";
 import AddProduct from "./../../components/AddProduct/AddProduct";
+import Modal from "./../../components/Modal/Modal";
 
 export default function Products() {
 	const [books, setBooks] = useState([]);
+	const [isShowModal, setIsShowModal] = useState(false);
+	const productDeleteHandler = (productID) => {};
+
+	useEffect(() => {
+		getData();
+	}, []);
+
+	const modalCancelAction = () => {
+		setIsShowModal(false);
+	};
+
+	const modalSubmitAction = () => {
+		setIsShowModal(false);
+	};
 
 	const getData = () => {
 		fetch("http://localhost:8000/api/products")
 			.then((res) => res.json())
 			.then((data) => setBooks(data));
 	};
-
-	useEffect(() => {
-		getData();
-	}, []);
-
-	const productDeleteHandler = (productID) => {};
 
 	const columns = [
 		{ field: "id", headerName: "ID", width: 50 },
@@ -52,6 +61,7 @@ export default function Products() {
 							className="action action_delete"
 							onClick={() => {
 								productDeleteHandler(params.row.id);
+								setIsShowModal(true);
 							}}
 						/>
 
@@ -82,6 +92,13 @@ export default function Products() {
 					</Alert>
 				)}
 			</div>
+			{isShowModal && (
+				<Modal
+				title='Do you want to delete this product?'
+					submitAction={modalSubmitAction}
+					cancelAction={modalCancelAction}
+				/>
+			)}
 
 			<AddProduct />
 		</div>

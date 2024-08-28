@@ -1,5 +1,7 @@
 import React from "react";
 import "./AddProduct.css";
+
+
 export default function AddProduct() {
 	return (
 		<div className="addProduct_wrapper">
@@ -22,6 +24,7 @@ export default function AddProduct() {
                     <button className="addform_btn">Add</button>
 				</form>
 			</div>
+
 		</div>
 	);
 }
