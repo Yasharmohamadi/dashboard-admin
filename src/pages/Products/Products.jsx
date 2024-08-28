@@ -4,9 +4,17 @@ import { allBooks } from "../../Data";
 import { DataGrid } from "@mui/x-data-grid";
 import { Edit, DeleteOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { Alert } from "@mui/material";
+
 
 export default function Products() {
-	const [books, setBooks] = useState(allBooks);
+	const [books, setBooks] = useState([]);
+
+	useEffect(() => {
+		fetch("http://localhost:8000/api/products")
+			.then((res) => res.json())
+			.then((data) => setBooks(data));
+	}, []);
 
 	const productDeleteHandler = (bookID) => {
 		setBooks(books.filter((book) => book.id != bookID));
@@ -23,14 +31,14 @@ export default function Products() {
 					<div className="productsname-wrapper">
 						<Link to={`/products/${params.row.id}`} className="link">
 							<img className="products_img" src={params.row.img} />
-							<span className="products_title">{params.row.name}</span>
+							<span className="products_title">{params.row.title}</span>
 						</Link>
 					</div>
 				);
 			},
 		},
 		{ field: "price", headerName: "Price", width: 100 },
-		{ field: "amount", headerName: "Amount", width: 100 },
+		{ field: "count", headerName: "Count", width: 100 },
 		{
 			field: "actions",
 			headerName: "Actions",
@@ -55,13 +63,19 @@ export default function Products() {
 	return (
 		<div className="productslist">
 			<h3 className="productslist_title">Products List</h3>
-			<DataGrid
-				rows={books}
-				columns={columns}
-				className="productslist-datagrid"
-				pageSize={3}
-        checkboxSelection
-			/>
+			{books ? (
+				<DataGrid
+					rows={books}
+					columns={columns}
+					className="productslist-datagrid"
+					pageSize={3}
+					checkboxSelection
+				/>
+			) : (
+				<Alert severity="error">
+					an Error appeared, Please Check Your Internet Connection !
+				</Alert>
+			)}
 		</div>
 	);
 }
