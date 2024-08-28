@@ -94,7 +94,7 @@ export default function Products() {
 			</div>
 			{isShowModal && (
 				<Modal
-				title='Do you want to delete this product?'
+					title="Do you want to delete this product?"
 					submitAction={modalSubmitAction}
 					cancelAction={modalCancelAction}
 				/>
