@@ -6,18 +6,21 @@ import { Edit, DeleteOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Alert } from "@mui/material";
 
-
 export default function Products() {
 	const [books, setBooks] = useState([]);
 
-	useEffect(() => {
+	const getData = () => {
 		fetch("http://localhost:8000/api/products")
 			.then((res) => res.json())
 			.then((data) => setBooks(data));
+	};
+
+	useEffect(() => {
+		getData();
 	}, []);
 
-	const productDeleteHandler = (bookID) => {
-		setBooks(books.filter((book) => book.id != bookID));
+	const productDeleteHandler = (productID) => {
+
 	};
 
 	const columns = [
@@ -48,7 +51,9 @@ export default function Products() {
 					<div className="actions-wrapper">
 						<DeleteOutline
 							className="action action_delete"
-							onClick={() => productDeleteHandler(params.row.id)}
+							onClick={() => {
+								productDeleteHandler(params.row.id);
+							}}
 						/>
 
 						<Link to={`/products/${params.row.id}`}>
