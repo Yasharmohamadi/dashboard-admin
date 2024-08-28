@@ -5,6 +5,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Edit, DeleteOutline } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Alert } from "@mui/material";
+import AddProduct from "./../../components/AddProduct/AddProduct";
 
 export default function Products() {
 	const [books, setBooks] = useState([]);
@@ -19,9 +20,7 @@ export default function Products() {
 		getData();
 	}, []);
 
-	const productDeleteHandler = (productID) => {
-
-	};
+	const productDeleteHandler = (productID) => {};
 
 	const columns = [
 		{ field: "id", headerName: "ID", width: 50 },
@@ -66,21 +65,25 @@ export default function Products() {
 	];
 
 	return (
-		<div className="productslist">
-			<h3 className="productslist_title">Products List</h3>
-			{books ? (
-				<DataGrid
-					rows={books}
-					columns={columns}
-					className="productslist-datagrid"
-					pageSize={3}
-					checkboxSelection
-				/>
-			) : (
-				<Alert severity="error">
-					an Error appeared, Please Check Your Internet Connection !
-				</Alert>
-			)}
+		<div>
+			<div className="productslist">
+				<h3 className="productslist_title">Products List</h3>
+				{books ? (
+					<DataGrid
+						rows={books}
+						columns={columns}
+						className="productslist-datagrid"
+						pageSize={3}
+						checkboxSelection
+					/>
+				) : (
+					<Alert severity="error">
+						an Error appeared, Please Check Your Internet Connection !
+					</Alert>
+				)}
+			</div>
+
+			<AddProduct />
 		</div>
 	);
 }
