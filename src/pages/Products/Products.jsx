@@ -7,11 +7,12 @@ import { Link } from "react-router-dom";
 import { Alert } from "@mui/material";
 import AddProduct from "./../../components/AddProduct/AddProduct";
 import Modal from "./../../components/Modal/Modal";
+import axios from "axios";
 
 export default function Products() {
 	const [books, setBooks] = useState([]);
 	const [isShowModal, setIsShowModal] = useState(false);
-	const productDeleteHandler = (productID) => {};
+	const [productID, setProductID] = useState(null);
 
 	useEffect(() => {
 		getData();
@@ -22,7 +23,21 @@ export default function Products() {
 	};
 
 	const modalSubmitAction = () => {
-		setIsShowModal(false);
+		fetch(`http://localhost:8000/api/products/${productID}`, {
+			method: "DELETE",
+		})
+			.then((res) => res.json())
+			.then((result) => {
+				setIsShowModal(false);
+				getData();
+				console.log(result);
+			});
+
+		// axios
+		// 	.delete(`http://localhost:8000/api/products/${productID}`)
+		// 	.then((response) => {
+		// 		console.log(response);
+		// 	});
 	};
 
 	const getData = () => {
@@ -60,8 +75,8 @@ export default function Products() {
 						<DeleteOutline
 							className="action action_delete"
 							onClick={() => {
-								productDeleteHandler(params.row.id);
 								setIsShowModal(true);
+								setProductID(params.row.id);
 							}}
 						/>
 
