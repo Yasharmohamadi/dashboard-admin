@@ -1,6 +1,6 @@
 .modal_wrapper {
 	position: fixed;
-    top: 0;
+	top: 0;
 	z-index: 100;
 	width: 100%;
 	height: 100vh;
@@ -8,8 +8,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    visibility: hidden;
-
+	visibility: hidden;
 }
 
 .modal {
@@ -19,40 +18,63 @@
 	border-radius: 10px;
 }
 .modal_wrapper.active {
-    visibility: visible;
+	visibility: visible;
 }
 .modal_title {
-    font-size: 25px;
-    margin-bottom: 20px;
+	font-size: 25px;
+	margin-bottom: 20px;
 }
 .modal_btns {
-    direction: rtl;
+	direction: rtl;
 }
 .modal_btn {
-    font-size: 20px;
-    border-radius: 5px;
-    outline: none;
+	font-size: 20px;
+	border-radius: 5px;
+	outline: none;
 
-    outline: none;
+	outline: none;
 	border: 1px solid #5550bd;
-    border-radius: 10px;
-    cursor: pointer;
+	border-radius: 10px;
+	cursor: pointer;
 }
 .modal_btn-yes {
-    background: #5550bd63;
-    padding: 5px 15px;
-
+	background: #5550bd63;
+	padding: 5px 15px;
 }
 .modal_btn-no {
-    background: #fff;
-    margin-right: 10px;
+	background: #fff;
+	margin-right: 10px;
 
-    padding: 5px 50px;
-
+	padding: 5px 50px;
 }
 .modal_btn-yes:hover {
-    background: #5550bd8c;
+	background: #5550bd8c;
 }
 .modal_btn-no:hover {
-    background: #e6e6e6;
+	background: #e6e6e6;
+}
+
+/* edite modal styles */
+.edit_input_container {
+	display: flex;
+	flex-direction: column;
+}
+.edit_input {
+	font-size: 20px;
+	padding: 7px 15px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	outline: none;
+	border: 1px solid #5550bd;
+	background: #5550bd12;
+}
+.edit_input:last-child {
+	margin-bottom: 25px;
+}
+.edit_input:focus {
+	background: #5550bd28;
+}
+
+.edit_input::placeholder {
+	color: #808080ba;
 }

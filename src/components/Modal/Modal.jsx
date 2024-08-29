@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import reactDOM from "react-dom";
 import "./Modal.css";
 
-export default function Modal({cancelAction, submitAction, title}) {
+export default function Modal({cancelAction, submitAction, title, children}) {
 	return reactDOM.createPortal(
 		<div className='modal_wrapper active'>
 			<div className="modal">
 				<h3 className="modal_title">{title}</h3>
+				{children}
 				<div className="modal_btns">
 					<button onClick={() => submitAction()} className="modal_btn modal_btn-yes">Yes</button>
 					<button onClick={() => cancelAction()} className="modal_btn modal_btn-no">

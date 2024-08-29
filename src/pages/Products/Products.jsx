@@ -11,18 +11,26 @@ import axios from "axios";
 
 export default function Products() {
 	const [books, setBooks] = useState([]);
-	const [isShowModal, setIsShowModal] = useState(false);
+	const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
+	const [isShowEditModal, setIsShowEditModal] = useState(true);
 	const [productID, setProductID] = useState(null);
 
 	useEffect(() => {
 		getData();
 	}, []);
 
-	const modalCancelAction = () => {
-		setIsShowModal(false);
+	const editModalCancelAction = () => {
+		setIsShowEditModal(false);
 	};
 
-	const modalSubmitAction = () => {
+	const editModalSubmitAction = () => {
+		setIsShowEditModal(false);
+	};
+	const deleteModalCancelAction = () => {
+		setIsShowDeleteModal(false);
+	};
+
+	const deleteModalSubmitAction = () => {
 		// fetch(`http://localhost:8000/api/products/${productID}`, {
 		// 	method: "DELETE",
 		// })
@@ -32,7 +40,7 @@ export default function Products() {
 		// 		console.log(result);
 		// 	});
 
-		setIsShowModal(false);
+		setIsShowDeleteModal(false);
 		// axios
 		// 	.delete(`http://localhost:8000/api/products/${productID}`)
 		// 	.then((response) => {
@@ -75,14 +83,18 @@ export default function Products() {
 						<DeleteOutline
 							className="action action_delete"
 							onClick={() => {
-								setIsShowModal(true);
+								setIsShowDeleteModal(true);
 								setProductID(params.row.id);
 							}}
 						/>
 
-						<Link to={`/products/${params.row.id}`}>
-							<Edit className="action action_edit" />
-						</Link>
+						<Edit
+							className="action action_edit"
+							onClick={() => {
+								setIsShowEditModal(true);
+								setProductID(params.row.id);
+							}}
+						/>
 					</div>
 				);
 			},
@@ -107,11 +119,25 @@ export default function Products() {
 					</Alert>
 				)}
 			</div>
-			{isShowModal && (
+			{isShowDeleteModal && (
 				<Modal
 					title="Do you want to delete this product?"
-					submitAction={modalSubmitAction}
-					cancelAction={modalCancelAction}
+					submitAction={deleteModalSubmitAction}
+					cancelAction={deleteModalCancelAction}
+				/>
+			)}
+			{isShowEditModal && (
+				<Modal
+					children={
+						<div className="edit_input_container">
+							<input className="edit_input" placeholder="New name ..."></input>
+							<input className="edit_input" placeholder="New price ..."></input>
+							<input className="edit_input" placeholder="New count ..."></input>
+						</div>
+					}
+					title="Edit product"
+					submitAction={editModalSubmitAction}
+					cancelAction={editModalCancelAction}
 				/>
 			)}
 
