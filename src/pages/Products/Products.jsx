@@ -3,7 +3,7 @@ import "./Products.css";
 import { allBooks } from "../../Data";
 import { DataGrid } from "@mui/x-data-grid";
 import { Edit, DeleteOutline } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 import { Alert } from "@mui/material";
 import AddProduct from "./../../components/AddProduct/AddProduct";
 import Modal from "./../../components/Modal/Modal";
@@ -22,22 +22,31 @@ export default function Products() {
 		getData();
 	}, []);
 
-	const inputNameValueHandler = (event) => {
-		setProductNewName(event.target.value);
-	};
-	const inputPriceValueHandler = (event) => {
-		productNewPrice(event.target.value);
-	};
-	const inputCountValueHandler = (event) => {
-		productNewCount(event.target.value);
-	};
-
 	const editModalCancelAction = () => {
 		setIsShowEditModal(false);
 	};
 	const editModalSubmitAction = () => {
 		setIsShowEditModal(false);
 
+		let productNewInfos = {
+			id: productID,
+			titel: productNewName,
+			price: productNewPrice,
+			count: productNewCount,
+		};
+
+		fetch(`http://localhost:8000/api/products/${productID}`, {
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(productNewInfos),
+		})
+			.then((res) => res.json())
+			.then((result) => {
+				console.log(result);
+				getData();
+			});
 	};
 
 	const deleteModalCancelAction = () => {
@@ -144,19 +153,19 @@ export default function Products() {
 								className="edit_input"
 								placeholder="New name ..."
 								value={productNewName}
-								onChange={inputNameValueHandler}
+								onChange={(event) => setProductNewName(event.target.value)}
 							/>
 							<input
 								className="edit_input"
 								placeholder="New price ..."
 								value={productNewPrice}
-								onChange={inputPriceValueHandler}
+								onChange={(event) => setProductNewPrice(event.target.value)}
 							/>
 							<input
 								className="edit_input"
 								placeholder="New count ..."
 								value={productNewCount}
-								onChange={inputCountValueHandler}
+								onChange={(event) => setProductNewCount(event.target.value)}
 							/>
 						</div>
 					}
