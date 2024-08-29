@@ -23,16 +23,16 @@ export default function Products() {
 	};
 
 	const modalSubmitAction = () => {
-		fetch(`http://localhost:8000/api/products/${productID}`, {
-			method: "DELETE",
-		})
-			.then((res) => res.json())
-			.then((result) => {
-				setIsShowModal(false);
-				getData();
-				console.log(result);
-			});
+		// fetch(`http://localhost:8000/api/products/${productID}`, {
+		// 	method: "DELETE",
+		// })
+		// 	.then((res) => res.json())
+		// 	.then((result) => {
+		// 		getData();
+		// 		console.log(result);
+		// 	});
 
+		setIsShowModal(false);
 		// axios
 		// 	.delete(`http://localhost:8000/api/products/${productID}`)
 		// 	.then((response) => {
