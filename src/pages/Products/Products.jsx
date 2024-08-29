@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { Alert } from "@mui/material";
 import AddProduct from "./../../components/AddProduct/AddProduct";
 import Modal from "./../../components/Modal/Modal";
-import axios from "axios";
 
 export default function Products() {
 	const [books, setBooks] = useState([]);
@@ -15,37 +14,44 @@ export default function Products() {
 	const [isShowEditModal, setIsShowEditModal] = useState(false);
 	const [productID, setProductID] = useState(null);
 
+	const [productNewName, setProductNewName] = useState("");
+	const [productNewPrice, setProductNewPrice] = useState("");
+	const [productNewCount, setProductNewCount] = useState("");
+
 	useEffect(() => {
 		getData();
 	}, []);
 
+	const inputNameValueHandler = (event) => {
+		setProductNewName(event.target.value);
+	};
+	const inputPriceValueHandler = (event) => {
+		productNewPrice(event.target.value);
+	};
+	const inputCountValueHandler = (event) => {
+		productNewCount(event.target.value);
+	};
+
 	const editModalCancelAction = () => {
 		setIsShowEditModal(false);
 	};
-
 	const editModalSubmitAction = () => {
 		setIsShowEditModal(false);
+
 	};
+
 	const deleteModalCancelAction = () => {
 		setIsShowDeleteModal(false);
 	};
-
 	const deleteModalSubmitAction = () => {
-		// fetch(`http://localhost:8000/api/products/${productID}`, {
-		// 	method: "DELETE",
-		// })
-		// 	.then((res) => res.json())
-		// 	.then((result) => {
-		// 		getData();
-		// 		console.log(result);
-		// 	});
-
-		setIsShowDeleteModal(false);
-		// axios
-		// 	.delete(`http://localhost:8000/api/products/${productID}`)
-		// 	.then((response) => {
-		// 		console.log(response);
-		// 	});
+		fetch(`http://localhost:8000/api/products/${productID}`, {
+			method: "DELETE",
+		})
+			.then((res) => res.json())
+			.then((result) => {
+				getData();
+				setIsShowDeleteModal(false);
+			});
 	};
 
 	const getData = () => {
@@ -64,7 +70,7 @@ export default function Products() {
 				return (
 					<div className="productsname-wrapper">
 						<Link to={`/products/${params.row.id}`} className="link">
-							<img className="products_img" src={params.row.img} />
+							<img className="products_img" src="./Images/book.png" />
 							<span className="products_title">{params.row.title}</span>
 						</Link>
 					</div>
@@ -93,6 +99,9 @@ export default function Products() {
 							onClick={() => {
 								setIsShowEditModal(true);
 								setProductID(params.row.id);
+								setProductNewName(params.row.title);
+								setProductNewPrice(params.row.price);
+								setProductNewCount(params.row.count);
 							}}
 						/>
 					</div>
@@ -130,12 +139,28 @@ export default function Products() {
 				<Modal
 					children={
 						<div className="edit_input_container">
-							<input className="edit_input" placeholder="New name ..."></input>
-							<input className="edit_input" placeholder="New price ..."></input>
-							<input className="edit_input" placeholder="New count ..."></input>
+							<input
+								dir="rtl"
+								className="edit_input"
+								placeholder="New name ..."
+								value={productNewName}
+								onChange={inputNameValueHandler}
+							/>
+							<input
+								className="edit_input"
+								placeholder="New price ..."
+								value={productNewPrice}
+								onChange={inputPriceValueHandler}
+							/>
+							<input
+								className="edit_input"
+								placeholder="New count ..."
+								value={productNewCount}
+								onChange={inputCountValueHandler}
+							/>
 						</div>
 					}
-					title="Edit product"
+					title="Enter new product infos"
 					submitAction={editModalSubmitAction}
 					cancelAction={editModalCancelAction}
 				/>
