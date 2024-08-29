@@ -12,7 +12,7 @@ import axios from "axios";
 export default function Products() {
 	const [books, setBooks] = useState([]);
 	const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
-	const [isShowEditModal, setIsShowEditModal] = useState(true);
+	const [isShowEditModal, setIsShowEditModal] = useState(false);
 	const [productID, setProductID] = useState(null);
 
 	useEffect(() => {

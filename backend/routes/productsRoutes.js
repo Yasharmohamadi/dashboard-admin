@@ -26,12 +26,13 @@ productsRouter.delete("/:productID", (req, res) => {
 
   SabzlearnShopDB.query(deleteProductQuery, (err, result) => {
     if (err) {
-      res.send(null);
+      res.send(err.message);
     } else {
-      res.send(result);
+      res.send({'deletedProductID' : productID});
     }
   });
 });
+
 
 productsRouter.put("/:productID", (req, res) => {
   let body = req.body;
