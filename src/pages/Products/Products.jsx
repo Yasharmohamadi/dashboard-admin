@@ -18,6 +18,9 @@ export default function Products() {
 	const [productNewPrice, setProductNewPrice] = useState("");
 	const [productNewCount, setProductNewCount] = useState("");
 
+	const [newProductName, setNewProductName] = useState("");
+	const [newProductPrice, setNewProductPrice] = useState("");
+	const [newProductCount, setNewProductCount] = useState("");
 
 	useEffect(() => {
 		getData();
@@ -192,18 +195,24 @@ export default function Products() {
 								type="text"
 								className="add_input"
 								placeholder="Name ..."
+								value={newProductName}
+								onChange={(event) => setNewProductName(event.target.value)}
 							/>
 
 							<input
 								type="number"
 								className="add_input"
 								placeholder="Price ..."
+								value={newProductPrice}
+								onChange={(event) => setNewProductPrice(event.target.value)}
 							/>
 
 							<input
 								type="number"
 								className="add_input"
 								placeholder="Count ..."
+								value={newProductCount}
+								onChange={(event) => setNewProductCount(event.target.value)}
 							/>
 
 							{/* <select id="type" className="add_input">
