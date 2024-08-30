@@ -18,6 +18,7 @@ export default function Products() {
 	const [productNewPrice, setProductNewPrice] = useState("");
 	const [productNewCount, setProductNewCount] = useState("");
 
+
 	useEffect(() => {
 		getData();
 	}, []);
@@ -26,27 +27,32 @@ export default function Products() {
 		setIsShowEditModal(false);
 	};
 	const editModalSubmitAction = () => {
+		// let productNewInfos = {
+		// 	id: productID,
+		// 	titel: productNewName,
+		// 	price: productNewPrice,
+		// 	count: productNewCount,
+		// 	img: '',
+		// 	popularity: '',
+		// 	sale: '',
+		// 	colors: '',
+
+		// };
 		setIsShowEditModal(false);
 
-		let productNewInfos = {
-			id: productID,
-			titel: productNewName,
-			price: productNewPrice,
-			count: productNewCount,
-		};
-
-		fetch(`http://localhost:8000/api/products/${productID}`, {
-			method: "PUT",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(productNewInfos),
-		})
-			.then((res) => res.json())
-			.then((result) => {
-				console.log(result);
-				getData();
-			});
+		// fetch(`http://localhost:8000/api/products/${productID}`, {
+		// 	method: "PUT",
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 	},
+		// 	body: JSON.stringify(productNewInfos),
+		// })
+		// 	.then((res) => res.json())
+		// 	.then((result) => {
+		// 		console.log(result);
+		// 		getData();
+		// 		setIsShowEditModal(false);
+		// 	});
 	};
 
 	const deleteModalCancelAction = () => {
@@ -175,7 +181,47 @@ export default function Products() {
 				/>
 			)}
 
-			<AddProduct />
+			{/* AddProduct */}
+			<div className="addProduct_wrapper">
+				<h3 className="addProduct_title">Add New Product</h3>
+
+				<div className="form-wrapper">
+					<form className="addform">
+						<div className="form-inputs">
+							<input
+								type="text"
+								className="add_input"
+								placeholder="Name ..."
+							/>
+
+							<input
+								type="number"
+								className="add_input"
+								placeholder="Price ..."
+							/>
+
+							<input
+								type="number"
+								className="add_input"
+								placeholder="Count ..."
+							/>
+
+							{/* <select id="type" className="add_input">
+							<option value="yes">Paper</option>
+							<option value="no">Another</option>
+						</select> */}
+						</div>
+						<button className="addform_btn">Add</button>
+					</form>
+				</div>
+				{/* {isShowModal && (
+				<Modal
+					title="Do you want add new product?"
+					submitAction={modalSubmitAction}
+					cancelAction={modalCancelAction}
+				/>
+			)} */}
+			</div>
 		</div>
 	);
 }

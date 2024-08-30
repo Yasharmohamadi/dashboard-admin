@@ -42,12 +42,15 @@ productsRouter.put("/:productID", (req, res) => {
   SabzlearnShopDB.query(updateProductQuery, (err, result) => {
     if (err) {
       console.log(err);
-      res.send(null);
+      res.send(err.message);
     } else {
-      res.send(result);
+      console.log('product updated.');
+      
+      res.send({'updatedProduct': productID});
     }
   });
 });
+
 
 productsRouter.post("/", (req, res) => {
   let body = req.body;
