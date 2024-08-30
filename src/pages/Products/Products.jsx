@@ -22,6 +22,30 @@ export default function Products() {
 	const [newProductPrice, setNewProductPrice] = useState("");
 	const [newProductCount, setNewProductCount] = useState("");
 
+	const addNewProductButton = (event) => {
+		event.preventDefault()
+		
+		// let newProductInfos = {
+		// 	name: newProductName,
+		// 	price: newProductPrice,
+		// 	count: newProductCount,
+		// };
+		// console.log(newProductInfos);
+
+		// fetch("http://localhost:8000/api/products", {
+		// 	method: "POST",
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 	},
+		// 	body: JSON.stringify(newProductInfos),
+		// })
+		// 	.then((res) => res.json())
+		// 	.then((result) => {
+		// 		console.log(result);
+		// 		getData();
+		// 	});
+	};
+
 	useEffect(() => {
 		getData();
 	}, []);
@@ -220,7 +244,9 @@ export default function Products() {
 							<option value="no">Another</option>
 						</select> */}
 						</div>
-						<button className="addform_btn">Add</button>
+						<button className="addform_btn" onClick={addNewProductButton}>
+							Add
+						</button>
 					</form>
 				</div>
 				{/* {isShowModal && (
