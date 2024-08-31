@@ -14,17 +14,25 @@ export default function Products() {
 	const [isShowEditModal, setIsShowEditModal] = useState(false);
 	const [productID, setProductID] = useState(null);
 
-	const [productNewName, setProductNewName] = useState("");
-	const [productNewPrice, setProductNewPrice] = useState("");
-	const [productNewCount, setProductNewCount] = useState("");
+	// this function get all data from api
+	const getData = () => {
+		fetch("http://localhost:8000/api/products")
+			.then((res) => res.json())
+			.then((data) => setBooks(data));
+	};
 
+	// here when web stated we run getData function
+	useEffect(() => {
+		getData();
+	}, []);
+
+	// start add new product codes
 	const [newProductName, setNewProductName] = useState("");
 	const [newProductPrice, setNewProductPrice] = useState("");
 	const [newProductCount, setNewProductCount] = useState("");
-
 	const addNewProductButton = (event) => {
-		event.preventDefault()
-		
+		event.preventDefault();
+
 		// let newProductInfos = {
 		// 	name: newProductName,
 		// 	price: newProductPrice,
@@ -45,11 +53,12 @@ export default function Products() {
 		// 		getData();
 		// 	});
 	};
+	// end add new product codes
 
-	useEffect(() => {
-		getData();
-	}, []);
-
+	// start edit product codes
+	const [productNewName, setProductNewName] = useState("");
+	const [productNewPrice, setProductNewPrice] = useState("");
+	const [productNewCount, setProductNewCount] = useState("");
 	const editModalCancelAction = () => {
 		setIsShowEditModal(false);
 	};
@@ -81,7 +90,9 @@ export default function Products() {
 		// 		setIsShowEditModal(false);
 		// 	});
 	};
+	// end edit product codes
 
+	// start delte product codes
 	const deleteModalCancelAction = () => {
 		setIsShowDeleteModal(false);
 	};
@@ -95,13 +106,9 @@ export default function Products() {
 				setIsShowDeleteModal(false);
 			});
 	};
+	// end delte product codes
 
-	const getData = () => {
-		fetch("http://localhost:8000/api/products")
-			.then((res) => res.json())
-			.then((data) => setBooks(data));
-	};
-
+	// here we create a columns for send data to data grid
 	const columns = [
 		{ field: "id", headerName: "ID", width: 50 },
 		{
