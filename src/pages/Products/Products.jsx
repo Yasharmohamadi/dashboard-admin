@@ -5,8 +5,9 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Edit, DeleteOutline } from "@mui/icons-material";
 import { Link, json } from "react-router-dom";
 import { Alert } from "@mui/material";
-import AddProduct from "./../../components/AddProduct/AddProduct";
 import Modal from "./../../components/Modal/Modal";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Products() {
 	const [books, setBooks] = useState([]);
@@ -32,6 +33,7 @@ export default function Products() {
 	const [newProductCount, setNewProductCount] = useState("");
 	const addNewProductButton = (event) => {
 		event.preventDefault();
+		toast.success("new product added to list.");
 
 		// let newProductInfos = {
 		// 	name: newProductName,
@@ -75,6 +77,7 @@ export default function Products() {
 
 		// };
 		setIsShowEditModal(false);
+		toast.success("edit product success.");
 
 		// fetch(`http://localhost:8000/api/products/${productID}`, {
 		// 	method: "PUT",
@@ -105,6 +108,8 @@ export default function Products() {
 				getData();
 				setIsShowDeleteModal(false);
 			});
+		toast.success("delete product success.");
+
 	};
 	// end delte product codes
 
@@ -264,6 +269,8 @@ export default function Products() {
 				/>
 			)} */}
 			</div>
+			<ToastContainer />
+
 		</div>
 	);
 }
