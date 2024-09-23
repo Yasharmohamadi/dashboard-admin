@@ -24,9 +24,12 @@ export default function SideBar() {
 				<div className="sidebar-menu">
 					<h3 className="sidebar-menu_title">Dashboard</h3>
 					<ul className="sidebar-menu_list">
-						<NavLink to="/home"
-						className={`${(link) => (link.isActive ? "link active" : "link")}`}>
-							<li className="sidebar-menu_item" >
+						<NavLink
+							to="/home"
+							className={`${(link) =>
+								link.isActive ? "link active" : "link"}`}
+						>
+							<li className="sidebar-menu_item">
 								<Home className="sidebar-menu-icon" />
 								Home
 							</li>
